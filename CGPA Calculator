@@ -1,0 +1,400 @@
+#include<stdio.h>
+#include<string.h>
+#include<conio.h>
+float grade(char*);
+float semone();
+float semtwo();
+float semthree();
+float semfour();
+float semfive();
+float semsix();
+float semseven();
+float semeight();
+int main()
+{
+	char name[60];
+	long int reg;
+	int ch;
+	float cal,o,t,th,f,fi,s,se,e;
+	printf("Enter your Name: ");
+	scanf("%s",name);
+	printf("Enter your Register Number: ");
+	scanf("%ld",&reg);
+	printf("Total Number of Semesters: ");
+	scanf("%d",&ch);
+	getche();
+	switch(ch)
+	{
+		case 1:
+			o=semone();
+			printf("\n\nt\t\t\tCGPA:%.2f",o);
+			return 0;
+		case 2:
+			o=semone();
+			t=semtwo();
+			cal=(o+t)/2;
+			printf("\n\n\t\t\t\tCGPA:%.2f",cal);
+			return 0;
+		case 3:
+			o=semone();
+			t=semtwo();
+			th=semthree();
+			cal=(o+t+th)/3;
+			printf("\n\n\t\t\t\tCGPA:%.2f",cal);
+			return 0;
+		case 4:
+			o=semone();
+			t=semtwo();
+			th=semthree();
+			f=semfour();
+			cal=(o+t+th+f)/4;
+			printf("\n\n\t\t\t\tCGPA:%.2f",cal);
+			return 0;
+		case 5:
+			o=semone();
+			t=semtwo();
+			th=semthree();
+			f=semfour();
+			fi=semfive();
+			cal=(o+t+th+f+fi)/5;
+			printf("\n\n\t\t\t\tCGPA:%.2f",cal);
+			return 0;
+		case 6:
+			o=semone();
+			t=semtwo();
+			th=semthree();
+			f=semfour();
+			fi=semfive();
+			s=semsix();
+			cal=(o+t+th+f+fi+s)/6;
+			printf("\n\n\t\t\t\tCGPA:%.2f",cal);
+			return 0;
+		case 7:
+			o=semone();
+			t=semtwo();
+			th=semthree();
+			f=semfour();
+			fi=semfive();
+			s=semsix();
+			se=semseven();
+			cal=(o+t+th+f+fi+s+se)/7;
+			printf("\n\n\t\t\t\tCGPA:%.2f",cal);
+			return 0;
+		case 8:
+			o=semone();
+			t=semtwo();
+			th=semthree();
+			f=semfour();
+			fi=semfive();
+			s=semsix();
+			se=semseven();
+			e=semeight();
+			cal=(o+t+th+f+fi+s+se+e)/8;
+			printf("\n\n\t\t\t\tCGPA:%.2f",cal);
+			return 0;
+		default:
+			printf("\nInvalid choice");
+			return 0;
+	}
+}
+float grade(char *g)
+{
+    if (strcmp(g, "O") == 0 || strcmp(g, "o") == 0) 
+	{
+		return 10;
+    }
+	if (strcmp(g, "A+") == 0 || strcmp(g, "a+") == 0) 
+	{
+		return 9;
+    }
+	if (strcmp(g, "A") == 0 || strcmp(g, "a") == 0) 
+	{
+		return 8;
+    }
+	if (strcmp(g, "B+") == 0 || strcmp(g, "b+") == 0) 
+	{
+		return 7;
+    }
+	if (strcmp(g, "B") == 0 || strcmp(g, "b") == 0) 
+	{
+		return 6;
+    }
+	if (strcmp(g, "C+") == 0 || strcmp(g, "c+") == 0) 
+	{
+		return 5;
+    }
+	if (strcmp(g, "C") == 0 || strcmp(g, "c") == 0) 
+	{
+		return 4;
+    }
+	if (strcmp(g, "U") == 0 || strcmp(g, "u") == 0) 
+	{
+		return 0;
+	}
+    printf("Invalid Grade\n");
+    printf("\nPlease Enter Valid Grade:");
+    char a[3];
+    scanf("%s",a);
+    return (grade(a));
+}
+float semone()
+{
+	float  calculate;
+	int  cht,cmc,cep, cce,cpspp,cec,cpcl,cpsppl,ccel;
+   	char ce[3],ht[3],mc[3],ep[3],pspp[3],ec[3],pcl[3],psppl[3],cel[3];
+   	printf("\n\n\n\n\n\t\t\t\tSEMESTER-I\n\n");
+	printf("\n Enter your Grades:\n\n");
+   	printf("\n\t\tCommunicative  English:");
+   	scanf("%s",ce);
+   	cce=grade(ce)*3;
+   	printf("\n\t\tHeritage Tamil:");
+   	scanf("%s",ht);
+   	cht=grade(ht)*1;
+   	printf("\n\t\tMatrices and Calculus:");
+   	scanf("%s",mc);
+   	cmc=grade(mc)*4;
+   	printf("\n\t\tEngineering Physics:");
+   	scanf("%s",ep);
+   	cep=grade(ep)*3;
+   	printf("\n\t\tProblem Solving in Python Programming:");
+   	scanf("%s",pspp);
+   	cpspp=grade(pspp)*3;
+ 	printf("\n\t\tEngineering Chemistry:");
+	scanf("%s",ec);
+	cec=grade(ec)*3  ;
+	printf("\n\t\tPhysics and Chemistry Laboratory:");
+	scanf("%s",pcl);
+	cpcl=grade(pcl)*2;
+	printf("\n\t\tProblem Solving Python Programming Laboratory:");
+	scanf("%s",psppl);
+	cpsppl=grade(psppl)*2;
+	printf("\n\t\tCommunicative English Laboratory:");
+	scanf("%s",cel);
+	ccel=grade(cel)*1;
+	float a=cht+cmc+cep+cce+cpspp+cec+cpcl+cpsppl+ccel;
+	float credit =22.0;
+	calculate=(float)(a/credit);
+	printf("GPA:%.2f",calculate);
+	return (calculate);
+} 
+
+float semtwo()
+{
+   float calculate;
+   int  cte,csnm,cpte,teg,cpc,ctt,cess,cepl,ccpl,ctel;
+   char te[3],snm[3],pte[3],eg[3],pc[3],tt[3],ess[3],epl[3],cpl[3],tel[3];
+   printf("\n\n\n\n\n\t\t\t\tSEMESTER-II\n\n");
+   printf("\n Enter your Grades:\n\n");
+   printf("\n\t\tTechnical English :");
+   scanf("%s",te);
+   cte=grade(te)*3;
+   printf("\n\t\tStatical Numerical Method:");
+   scanf("%s",snm);
+   csnm=grade(snm)*4;
+   printf("\n\t\tPhysics for Computer Science:");
+   scanf("%s",pte);
+   cpte=grade(pte)*3;
+   printf("\n\t\tEngineering Grapics:");
+   scanf("%s",eg);
+   teg=grade(eg)*4;
+   printf("\n\t\tProgramming in C:");
+   scanf("%s",pc);
+   cpc=grade(pc)*3;
+   printf("\n\t\tTamil and Technology:");
+   scanf("%s",tt);
+   ctt=grade(tt)*1 ;
+   printf("\n\t\tEnvironmental Science and Sustainability:");
+   scanf("%s",ess);
+   cess=grade(ess)*2;
+   printf("\n\t\tEnglish Laboratory:");
+   scanf("%s",tel);
+   ctel=grade(tel)*1;
+   printf("\n\t\tC Programming Laboratory:");
+   scanf("%s",cpl);
+   ccpl=grade(cpl)*2;
+   printf("\n\t\tEngineering Practice Laboratory:");
+   scanf("%s",epl);
+   cepl=grade(epl)*2;
+
+   float a=cte+csnm+cpte+teg+cpc+ctt+cess+cepl+ccpl+ctel;
+   float c=25.0;
+	calculate=(float)(a/c);
+	printf("GPA:%.2f",calculate);
+	return(calculate);
+}
+float semthree()
+{  
+   float calculate;
+   int  cos,cds,cfds,cdpco,coops,clds,cloops,clfds,cqav;
+   char os[3],ds[3],fds[3],dpco[3],oops[3],lds[3],loops[3],lfds[3],qav[3];
+   printf("\n\n\n\n\n\t\t\t\tSEMESTER-III\n\n");
+   printf("\n Enter your Grades:\n\n");
+   printf("\n\t\tOperating System:");
+   scanf("%s",os);
+   cos=grade(os)*4;
+   printf("\n\t\tData Structure:");
+   scanf("%s",ds);
+   cds=grade(ds)*3;
+   printf("\n\t\tData Science:");
+   scanf("%s",fds);
+   cfds=grade(fds)*3;
+   printf("\n\t\tDigital Principles:");
+   scanf("%s",dpco);
+   cdpco=grade(dpco)*4;
+   printf("\n\t\tObject Oriented Programming:");
+   scanf("%s",oops);
+   coops=grade(oops)*3;
+   printf("\n\t\tData Structure Laboratory:");
+   scanf("%s",lds);
+   clds=grade(lds)*2;
+   printf("\n\t\tObject Oriented Programming  Laboratory:");
+   scanf("%s",loops);
+   cloops=grade(loops)*2;
+   printf("\n\t\tData Science Laboratory:");
+   scanf("%s",fds);
+   cfds=grade(fds)*2;
+   printf("\n\t\tQuantitative Aptitude & Verbal Reasoning:");
+   scanf("%s",qav);
+   cqav=grade(qav)*1;
+   float a=cos+cds+cfds+cdpco+coops+clds+cloops+clfds+cqav;
+   float c=24.0;
+   	calculate=(float)(a/c);
+   	printf("\nGPA:%.2f",calculate);
+   	return (calculate);
+    
+}
+float semfour()
+{   
+    float calculate;
+	int  cse,cda,cdm,cdms,cjp,cldms,cljp,cqav;
+	char se[3],da[3],dm[3],dms[3],jp[3],ldms[3],ljp[3],qav[3];
+	printf("\n\n\n\n\n\t\t\t\tSEMESTER-IV\n\n");
+	printf("\n Enter your Grades:\n\n");
+	printf("\n\t\tSoftware Engineering:");
+	scanf("%s",se);
+	cse=grade(se)*3;
+	printf("\n\t\tDesign and Analysis of Algorithms:");
+	scanf("%s",da);
+	cda=grade(da)*4;
+	printf("\n\t\tDiscrete Mathemathics:");
+	scanf("%s",dm);
+	cdm=grade(dm)*4;
+	printf("\n\t\tDatabase Management system:");
+	scanf("%s",dms);
+	cdms=grade(dms)*3;
+	printf("\n\t\tJava Programming:");
+	scanf("%s",jp);
+	cjp=grade(jp)*3;
+	printf("\n\t\tDatabase Management System Laboratory:");
+	scanf("%s",ldms);
+	cldms=grade(ldms)*2;
+	printf("\n\t\tJava Programming  Laboratory :");
+	scanf("%s",ljp);
+	cljp=grade(ljp)*2;
+	printf("\n\t\tQuatitative Aptitude & Behavioural Skills:");
+	scanf("%s",qav);
+	cqav=grade(qav)*1;
+	float a=cse+cda+cdm+cdms+cjp+cldms+cljp+cqav;
+	float c=22.0;
+   	calculate=(float)(a/c);
+   	printf("\nGPA:%.2f",calculate);
+   	return (calculate);
+}
+float semfive()
+{
+	float calculate;
+	int  ccd,ce,ccn,cfsp,cqav;
+	char cd[3],e[3],cn[3],fsp[3],qav[3];
+	printf("\n\n\n\n\n\t\t\t\tSEMESTER-V\n\n");
+	printf("\n Enter your Grades:\n\n");
+	printf("\n\t\tCompiler Design:");
+	scanf("%s",cd);
+	ccd=grade(cd)*4;
+	printf("\n\t\tElective:");
+	scanf("%s",e);
+	ce=grade(e)*9;
+	printf("\n\t\tComputer Networks:");
+	scanf("%s",cn);
+	ccn=grade(cn)*4;
+	printf("\n\t\tFull Stack Programming:");
+	scanf("%s",fsp);
+	cfsp=grade(fsp)*4;
+	printf("\n\t\tQuatitative Aptitude & Behavioural Skills:");
+	scanf("%s",qav);
+	cqav=grade(qav)*1;
+	float a=ccd+ccn+cfsp+cqav+ce;
+	float c=22.0;
+   	calculate=(float)(a/c);
+   	printf("\nGPA:%.2f",calculate);
+   	return (calculate);
+}
+float semsix()
+{
+	float calculate ;
+   int  cmc,cccs,ce,cai,cma,cqa,cmp;
+   char mc[3],ccs[3],ai[3],ma[3],e[3],qa[3],mp[3];
+   printf("\n\n\n\n\n\t\t\t\tSEMESTER-VI\n\n");
+   printf("\n Enter your Grades:\n\n");
+   printf("\n\t\tMobile  Computing:");
+   scanf("%s",mc);
+   cmc=grade(mc)*6;
+   printf("\n\t\tElective:");
+   scanf("%s",e);
+   ce=grade(e)*12;
+   printf("\n\t\tCryptography and Cyber Security:");
+   scanf("%s",ccs);
+   cccs=grade(ccs)*4;
+   printf("\n\t\tArtificial Intelligence and Machine Learning:");
+   scanf("%s",ai);
+   cai=grade(ai)*9;
+   printf("\n\t\tMobile Application and Development Laboratory:");
+   scanf("%s",ma);
+   cma=grade(ma)*2;
+   printf("\n\t\tQuantitative Aptitude and Soft Skills:");
+   scanf("%s",qa);
+   cqa=grade(qa)*1;
+   printf("\n\t\tMini Project:");
+   scanf("%s",mp);
+   cmp=grade(mp)*2;
+   float a=cmc+cccs+ce+cai+cma+cqa+cmp;
+   float c=25.0;
+   	calculate=(float)(a/c);
+    printf("\nGPA:%.2f",calculate);
+    return (calculate);
+}
+float semseven()
+{
+   float calculate ;
+   int  cms,ci,ce;
+   char ms[3],i[3],e[3];
+   printf("\n\n\n\n\n\t\t\t\tSEMESTER-VII\n\n");
+   printf("\n Enter your Grades:\n\n");
+   printf("\n\t\tHuman Values and Ethics:");
+   scanf("%s",ms);
+   cms=grade(ms)*2;
+   printf("\n\t\tElective:");
+   scanf("%s",e);
+   ce=grade(e)*12;
+   printf("\n\t\tInternship:");
+   scanf("%s",i);
+   ci=grade(i)*1;
+   float a=cms+ci+ce;
+   float c=15.0;
+  	calculate=(float)(a/c);
+   	printf("\nGPA:%.2f",calculate);
+   	return (calculate);
+}
+float semeight()
+{
+	float cal;
+   float  cp;
+   char p[3];
+   printf("\n\n\n\n\n\t\t\t\tSEMESTER-VIII\n\n");
+   printf("\n Enter your Grades:\n\n");
+   printf("\n\t\tProject Work:");
+   scanf("%s",p);
+   cp=grade(p)*10;
+   cal=(float)(cp/10);
+   	printf("\nGPA:%.2f",cal);
+   	return (cal);
+}
